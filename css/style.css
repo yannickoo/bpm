@@ -1,0 +1,135 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  display: table;
+}
+
+body {
+  display: table-cell;
+
+  text-align: center;
+  vertical-align: middle;
+}
+
+body {
+  font-family: 'Arial Black', 'Arial', sans-serif;
+
+  cursor: default;
+}
+
+body.transition {
+  transition: background-color .2s ease-in-out;
+}
+
+#config-form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  width: 460px;
+  padding: 20px;
+
+  transition: all .2s ease-in-out;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+#config-form.furtive {
+  left: -430px;
+}
+
+#config-form,
+#github {
+  transition: opacity .5s ease;
+}
+
+.furtive {
+  opacity: .1;
+}
+
+#github.furtive {
+  opacity: 0;
+}
+
+#config-form > div {
+  margin-top: 10px;
+}
+
+#config-form > div:first-child {
+  margin-top: 0;
+}
+
+#config-form > div > * {
+  display: inline-block;
+
+  vertical-align: middle;
+}
+
+label {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 40px;
+
+  margin-right: 5px;
+
+  text-transform: uppercase;
+}
+
+input,
+select {
+  font-family: 'Arial Black', Arial, sans-serif;
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 32px;
+
+  display: inline-block;
+
+  width: 70px;
+  padding: 4px 8px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  border: 3px solid #000;
+  border-radius: 0;
+  background: rgba(255, 255, 255, .4);
+
+  -webkit-appearance: none;
+     -moz-appearance: none;
+}
+
+select {
+  width: 100px;
+}
+
+#count {
+  font-size: 28px;
+
+  cursor: pointer;
+
+  border: 0;
+  background: transparent;
+}
+
+@media only screen and (max-width: 800px) {
+  #config-form {
+    max-width: 100%;
+  }
+
+  label {
+    font-size: 20px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    max-width: 70px;
+  }
+}

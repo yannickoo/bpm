@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, user-scalable=no">
+    <title>BPM Visualizer</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/randomColor.min.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body>
+    <form id="config-form">
+      <div>
+        <label for="bpm">BPM</label>
+        <input type="number" id="bpm" placeholder="BPM" min="1" max="200" value="130">
+        <button id="count">🔨</button>
+      </div>
+
+      <div>
+        <label for="luminosity">Luminosity</label>
+        <select id="luminosity">
+          <option value="">none</option>
+          <option value="bright">bright</option>
+          <option value="light" selected>light</option>
+          <option value="dark">dark</option>
+        </select>
+      </div>
+
+       <div>
+        <label for="hue">Hue</label>
+        <select id="hue">
+          <option value="">none</option>
+          <option value="red">red</option>
+          <option value="orange">orange</option>
+          <option value="yellow">yellow</option>
+          <option value="green">green</option>
+          <option value="blue">blue</option>
+          <option value="purple">purple</option>
+          <option value="pink">pink</option>
+          <option value="monochrome">monochrome</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="transition">Transition</label>
+        <select id="transition">
+          <option value="">none</option>
+          <option value="1s">fast</option>
+          <option value="2s">normal</option>
+          <option value="5s">slow</option>
+        </select>
+      </div>
+    </form>
+
+    <a href="https://github.com/yannickoo/bpm-visualizer" id="github"><img style="position: absolute; top: 0; right: 0; border: 0; width: 100px; height: 100px;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+  </body>
+</html>
