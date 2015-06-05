@@ -6,4 +6,4 @@ Another small experiment which let you enter an amount of [BPM](http://en.wikipe
 and changes the background color accordingly. Colors are generated via [randomColor](https://github.com/davidmerfield/randomColor).
 
 You can even set the luminosity and hue of the generated background color.
-For duration of the transition can be set as well.
+The transition duration can be set as well.
