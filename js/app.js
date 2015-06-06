@@ -121,11 +121,14 @@
       }
       // Space key toggles background color changer.
       else if (e.keyCode === 32) {
-        if (backgroundChanger) {
-          stopBackgroundChanger();
-        }
-        else {
-          $bpm.trigger('change');
+        // Prevent that behavior when user wants to count BPM.
+        if (document.activeElement.tagName.toLowerCase() !== 'button') {
+          if (backgroundChanger) {
+            stopBackgroundChanger();
+          }
+          else {
+            $bpm.trigger('change');
+          }
         }
       }
     });
