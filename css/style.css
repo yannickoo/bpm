@@ -9,20 +9,44 @@ html {
 }
 
 body {
-  display: table-cell;
+  margin: 0;
 
-  text-align: center;
-  vertical-align: middle;
-}
-
-body {
   font-family: 'Arial Black', 'Arial', sans-serif;
 
   cursor: default;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 body.transition {
   transition: background-color .2s ease-in-out;
+}
+
+body.hide-cursor {
+  cursor: none;
+}
+
+:-webkit-full-screen #github {
+  display: none;
+}
+
+:-moz-full-screen #github {
+  display: none;
+}
+
+:-ms-fullscreen #github {
+  display: none;
+}
+
+:full-screen #github {
+  display: none;
+}
+
+:fullscreen #github {
+  display: none;
 }
 
 #config-form {
@@ -45,9 +69,11 @@ body.transition {
   left: -430px;
 }
 
-#config-form,
-#github {
-  transition: opacity .5s ease;
+#config-form.dark label {
+  text-shadow: -1px -1px 0 #fff,
+                1px -1px 0 #fff,
+               -1px 1px 0 #fff,
+                1px 1px 0 #fff;
 }
 
 .furtive {
@@ -80,10 +106,6 @@ label {
   margin-right: 5px;
 
   text-transform: uppercase;
-  text-shadow: -1px -1px 0 #fff,
-                1px -1px 0 #fff,
-               -1px 1px 0 #fff,
-                1px 1px 0 #fff;
 }
 
 input,

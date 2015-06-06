@@ -12,6 +12,7 @@
         color,
         backgroundChanger,
         formOpacity,
+        hideCursor,
         countStart,
         timeElapsed,
         beats = 0,
@@ -20,7 +21,22 @@
            backgroundChanger = null;
         };
 
-    $bpm.add($luminosity, $hue).on('change', function() {
+    $body.on('dblclick', function() {
+      if (document.documentElement.requestFullscreen) {
+        document.documentElement.requestFullscreen();
+      }
+      else if (document.documentElement.mozRequestFullScreen) {
+        document.documentElement.mozRequestFullScreen();
+      }
+      else if (document.documentElement.webkitRequestFullscreen) {
+        document.documentElement.webkitRequestFullscreen();
+      }
+      else if (document.documentElement.msRequestFullscreen) {
+        document.documentElement.msRequestFullscreen();
+      }
+    });
+
+    $bpm.add($luminosity).add($hue).on('change', function() {
       // Stop timeout and interval.
       window.clearTimeout(formOpacity);
       stopBackgroundChanger();
@@ -33,7 +49,17 @@
 
         $body.css('background-color', color);
       }, 1000 * 60 / $bpm.val());
-    }).trigger('change');
+
+      // Add a stroke to the labels if monochrome is selected.
+      if ($hue.val() == 'monochrome') {
+        $configForm.addClass('dark');
+      }
+      else {
+        $configForm.removeClass('dark');
+      }
+    });
+
+    $bpm.trigger('change');
 
     $transition.on('change', function() {
       if ($transition.val()) {
@@ -68,14 +94,20 @@
       $bpm.val(Math.round(beats * 60 / timeElapsed));
     });
 
-    $opacityElements.on('mousemove', function() {
+    $body.on('mousemove', function() {
+      window.clearInterval(hideCursor);
       window.clearInterval(formOpacity);
 
+      $body.removeClass('hide-cursor');
       $opacityElements.removeClass('furtive');
+
+      hideCursor = window.setTimeout(function() {
+        $body.addClass('hide-cursor');
+      }, 5000);
 
       formOpacity = window.setTimeout(function() {
         $opacityElements.addClass('furtive');
-      }, 5000)
+      }, 5000);
     });
 
     $configForm.find(':input').on('focus', function() {
