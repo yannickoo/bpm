@@ -7,3 +7,5 @@ and changes the background color accordingly. Colors are generated via [randomCo
 
 You can even set the luminosity and hue of the generated background color.
 The transition duration can be set as well.
+
+Protip: Make a double click on the page to trigger fullscreen mode :tv:
