@@ -72,6 +72,26 @@
       }
     });
 
+    $count.on('mousedown', function() {
+      $count.addClass('active');
+    });
+
+    $count.on('mouseup', function() {
+      $count.removeClass('active');
+    });
+
+    $count.on('keydown', function(e) {
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        $count.addClass('active');
+      }
+    });
+
+    $count.on('keyup', function(e) {
+      if (e.keyCode === 13 || e.keyCode === 32) {
+        $count.removeClass('active');
+      }
+    });
+
     $count.on('click', function(e) {
       e.preventDefault();
       window.clearInterval(formOpacity);
@@ -85,8 +105,6 @@
           return;
         }
       }
-
-      $count.toggleClass('active');
 
       var diff = new Date().getTime() - countStart.getTime();
 
