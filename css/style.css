@@ -142,6 +142,16 @@ select {
 
   border: 0;
   background: transparent;
+
+  transition: transform .2s ease-in;
+}
+
+#count.active {
+  transform: rotate(-50deg);
+}
+
+#count:focus {
+  outline: 0;
 }
 
 @media only screen and (max-width: 800px) {

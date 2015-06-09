@@ -86,6 +86,8 @@
         }
       }
 
+      $count.toggleClass('active');
+
       var diff = new Date().getTime() - countStart.getTime();
 
       beats++
