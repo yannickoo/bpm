@@ -21,7 +21,12 @@
            backgroundChanger = null;
         };
 
-    $body.on('dblclick', function() {
+    $body.on('dblclick', function(e) {
+      // Do not launch fullscreen mode when clicking the hammer.
+      if (e.target == $count[0]) {
+        return;
+      }
+
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       }
