@@ -116,7 +116,7 @@
       beats++
       timeElapsed = diff ? Math.abs(diff / 1000) : 1;
 
-      $bpm.val(Math.round(beats * 60 / timeElapsed));
+      $bpm.val(Math.round(beats * 60 / timeElapsed)).trigger('change');
     });
 
     $body.on('mousemove', function() {
